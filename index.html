@@ -1,0 +1,1856 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta
+            name="description"
+            content="Documentation for the Kittn API"
+        >
+    <title>API Reference</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-9c19b03a.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-966d6edc.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all_nosearch-18c3ed8e.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;swift&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-997ddb50.png" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+              <a href="#" data-language-name="swift">swift</a>
+        </div>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#identity-columns" class="toc-h2 toc-link" data-title="Identity columns">Identity columns</a>
+                  </li>
+                  <li>
+                    <a href="#http-headers" class="toc-h2 toc-link" data-title="HTTP Headers">HTTP Headers</a>
+                  </li>
+                  <li>
+                    <a href="#supported-languages" class="toc-h2 toc-link" data-title="Supported languages">Supported languages</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#wellknow" class="toc-h1 toc-link" data-title="WellKnow">WellKnow</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#webfinger" class="toc-h2 toc-link" data-title="WebFinger">WebFinger</a>
+                  </li>
+                  <li>
+                    <a href="#nodeinfo-https-github-com-jhass-nodeinfo" class="toc-h2 toc-link" data-title="NodeInfo (https://github.com/jhass/nodeinfo)">NodeInfo (https://github.com/jhass/nodeinfo)</a>
+                  </li>
+                  <li>
+                    <a href="#host-meta-https-www-rfc-editor-org-rfc-rfc6415-html" class="toc-h2 toc-link" data-title="Host-meta (https://www.rfc-editor.org/rfc/rfc6415.html)">Host-meta (https://www.rfc-editor.org/rfc/rfc6415.html)</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#node-info" class="toc-h1 toc-link" data-title="Node info">Node info</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#version-2-0" class="toc-h2 toc-link" data-title="Version 2.0">Version 2.0</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#activity-pub" class="toc-h1 toc-link" data-title="Activity Pub">Activity Pub</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#shared-inbox" class="toc-h2 toc-link" data-title="Shared inbox">Shared inbox</a>
+                  </li>
+                  <li>
+                    <a href="#get-actor" class="toc-h2 toc-link" data-title="Get actor">Get actor</a>
+                  </li>
+                  <li>
+                    <a href="#actor-inbox" class="toc-h2 toc-link" data-title="Actor inbox">Actor inbox</a>
+                  </li>
+                  <li>
+                    <a href="#actor-outbox" class="toc-h2 toc-link" data-title="Actor outbox">Actor outbox</a>
+                  </li>
+                  <li>
+                    <a href="#actor-following" class="toc-h2 toc-link" data-title="Actor following">Actor following</a>
+                  </li>
+                  <li>
+                    <a href="#actor-followers" class="toc-h2 toc-link" data-title="Actor followers">Actor followers</a>
+                  </li>
+                  <li>
+                    <a href="#actor-status" class="toc-h2 toc-link" data-title="Actor status">Actor status</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#registration" class="toc-h1 toc-link" data-title="Registration">Registration</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#new-user" class="toc-h2 toc-link" data-title="New user">New user</a>
+                  </li>
+                  <li>
+                    <a href="#username" class="toc-h2 toc-link" data-title="Username">Username</a>
+                  </li>
+                  <li>
+                    <a href="#email" class="toc-h2 toc-link" data-title="Email">Email</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#account" class="toc-h1 toc-link" data-title="Account">Account</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#login" class="toc-h2 toc-link" data-title="Login">Login</a>
+                  </li>
+                  <li>
+                    <a href="#confirm-email" class="toc-h2 toc-link" data-title="Confirm email">Confirm email</a>
+                  </li>
+                  <li>
+                    <a href="#resend-email" class="toc-h2 toc-link" data-title="Resend email">Resend email</a>
+                  </li>
+                  <li>
+                    <a href="#change-password" class="toc-h2 toc-link" data-title="Change password">Change password</a>
+                  </li>
+                  <li>
+                    <a href="#forgot-password" class="toc-h2 toc-link" data-title="Forgot password">Forgot password</a>
+                  </li>
+                  <li>
+                    <a href="#reset-password" class="toc-h2 toc-link" data-title="Reset password">Reset password</a>
+                  </li>
+                  <li>
+                    <a href="#refresh-access-token" class="toc-h2 toc-link" data-title="Refresh access token">Refresh access token</a>
+                  </li>
+                  <li>
+                    <a href="#revoke-refresh-tokens" class="toc-h2 toc-link" data-title="Revoke refresh tokens">Revoke refresh tokens</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#attachments" class="toc-h1 toc-link" data-title="Attachments">Attachments</a>
+          </li>
+          <li>
+            <a href="#avatars" class="toc-h1 toc-link" data-title="Avatars">Avatars</a>
+          </li>
+          <li>
+            <a href="#categories" class="toc-h1 toc-link" data-title="Categories">Categories</a>
+          </li>
+          <li>
+            <a href="#countries" class="toc-h1 toc-link" data-title="Countries">Countries</a>
+          </li>
+          <li>
+            <a href="#follow-requests" class="toc-h1 toc-link" data-title="Follow requests">Follow requests</a>
+          </li>
+          <li>
+            <a href="#headers" class="toc-h1 toc-link" data-title="Headers">Headers</a>
+          </li>
+          <li>
+            <a href="#instance" class="toc-h1 toc-link" data-title="Instance">Instance</a>
+          </li>
+          <li>
+            <a href="#invitations" class="toc-h1 toc-link" data-title="Invitations">Invitations</a>
+          </li>
+          <li>
+            <a href="#locations" class="toc-h1 toc-link" data-title="Locations">Locations</a>
+          </li>
+          <li>
+            <a href="#notifications" class="toc-h1 toc-link" data-title="Notifications">Notifications</a>
+          </li>
+          <li>
+            <a href="#relationships" class="toc-h1 toc-link" data-title="Relationships">Relationships</a>
+          </li>
+          <li>
+            <a href="#reports" class="toc-h1 toc-link" data-title="Reports">Reports</a>
+          </li>
+          <li>
+            <a href="#roles" class="toc-h1 toc-link" data-title="Roles">Roles</a>
+          </li>
+          <li>
+            <a href="#search" class="toc-h1 toc-link" data-title="Search">Search</a>
+          </li>
+          <li>
+            <a href="#settings" class="toc-h1 toc-link" data-title="Settings">Settings</a>
+          </li>
+          <li>
+            <a href="#statuses" class="toc-h1 toc-link" data-title="Statuses">Statuses</a>
+          </li>
+          <li>
+            <a href="#timelines" class="toc-h1 toc-link" data-title="Timelines">Timelines</a>
+          </li>
+          <li>
+            <a href="#trending" class="toc-h1 toc-link" data-title="Trending">Trending</a>
+          </li>
+          <li>
+            <a href="#users" class="toc-h1 toc-link" data-title="Users">Users</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li>Vernissage API documentation</li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to the Vernissage API! You can use our API to access Vernissage API endpoints, which can get information on statuses,
+attachments, users and more in our database.</p>
+
+<p>This example API documentation page was created with <a href="https://github.com/slatedocs/slate">Slate</a>.</p>
+<h2 id='identity-columns'>Identity columns</h2>
+<p>All objects contains own identity columnt <code>id</code>. That column is a big int (created by algorithm similar to Snowflakes),
+howver in all JSON requests have to be send as a string.</p>
+<h2 id='http-headers'>HTTP Headers</h2>
+<p>All requests have to contains headers.</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Content-Type</td>
+<td>application/json</td>
+</tr>
+</tbody></table>
+<h2 id='supported-languages'>Supported languages</h2>
+<p>Messages returned by API are always on english. However during user registration there is an property <code>locale</code>.
+That property is saved in the user profile, and thanks to this property communication in user can be done.
+For example emails are send with choosen language.</p>
+
+<p>Default in the system we can find two languages: <code>en_US</code>, <code>pl_PL</code>. More titles and translations can be added by system administrator.</p>
+<h1 id='wellknow'>WellKnow</h1><h2 id='webfinger'>WebFinger</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/.well-known/webfinger?resource=acct:johndoe@example.com"</span> <span class="se">\</span>
+  <span class="nt">-X</span> GET <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">URLRequest</span><span class="o">.</span><span class="n">shared</span>
+<span class="n">request</span><span class="o">.</span><span class="nf">post</span><span class="p">()</span>
+</code></pre></div>
+<blockquote>
+<p>Example response body:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acct:johndoe@example.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"aliases"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"https://example.com/@johndoe"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"https://example.com/actors/johndoe"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://webfinger.net/rel/profile-page"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"text/html"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/@mczachurski"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"self"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/activity+json"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/actors/johndoe"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><code>GET /.well-known/webfinger?resource=acct:johndoe@example.com</code></p>
+
+<p>Discover user on remote server.</p>
+<h2 id='nodeinfo-https-github-com-jhass-nodeinfo'>NodeInfo (https://github.com/jhass/nodeinfo)</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/.well-known/nodeinfo"</span> <span class="se">\</span>
+  <span class="nt">-X</span> GET <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">URLRequest</span><span class="o">.</span><span class="n">shared</span>
+<span class="n">request</span><span class="o">.</span><span class="nf">post</span><span class="p">()</span>
+</code></pre></div>
+<blockquote>
+<p>Example response body:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"rel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://nodeinfo.diaspora.software/ns/schema/2.0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/nodeinfo/2.0"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><code>GET /.well-known/nodeinfo</code></p>
+
+<p>Discover url to NodeInfo endpoint.</p>
+<h2 id='host-meta-https-www-rfc-editor-org-rfc-rfc6415-html'>Host-meta (https://www.rfc-editor.org/rfc/rfc6415.html)</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/.well-known/host-meta"</span> <span class="se">\</span>
+  <span class="nt">-X</span> GET
+</code></pre></div><div class="highlight"><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">URLRequest</span><span class="o">.</span><span class="n">shared</span>
+<span class="n">request</span><span class="o">.</span><span class="nf">post</span><span class="p">()</span>
+</code></pre></div>
+<blockquote>
+<p>Example response body:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight xml tab-xml"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;XRD</span> <span class="na">xmlns=</span><span class="s">"http://docs.oasis-open.org/ns/xri/xrd-1.0"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;Link</span> <span class="na">rel=</span><span class="s">"lrdd"</span> <span class="na">template=</span><span class="s">"https://example.com/.well-known/webfinger?resource={uri}"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/XRD&gt;</span>
+</code></pre></div>
+<p><code>GET /.well-known/host-meta</code></p>
+
+<p>Discover url to NodeInfo endpoint.</p>
+<h1 id='node-info'>Node info</h1><h2 id='version-2-0'>Version 2.0</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/nodeinfo"</span> <span class="se">\</span>
+  <span class="nt">-X</span> GET <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">URLRequest</span><span class="o">.</span><span class="n">shared</span>
+<span class="n">request</span><span class="o">.</span><span class="nf">post</span><span class="p">()</span>
+</code></pre></div>
+<blockquote>
+<p>Example response body:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"openRegistrations"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"services"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"inbound"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="nl">"outbound"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"protocols"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"activitypub"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"software"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vernissage"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"usage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"activeMonth"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"activeHalfyear"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"localComments"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"localPosts"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"nodeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"localhost"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><a href="http://nodeinfo.diaspora.software">NodeInfo</a> is an effort to create a standardized way of exposing metadata about a server running one of the distributed social networks.
+The two key goals are being able to get better insights into the user base of distributed social networking and the ability to build 
+tools that allow users to choose the best fitting software and server for their needs.</p>
+<h1 id='activity-pub'>Activity Pub</h1>
+<p>Endpoints used for registaring new user into the system.</p>
+<h2 id='shared-inbox'>Shared inbox</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/shared/inbox"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{ ... }'</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">URLRequest</span><span class="o">.</span><span class="n">shared</span>
+<span class="n">request</span><span class="o">.</span><span class="nf">post</span><span class="p">()</span>
+</code></pre></div>
+<blockquote>
+<p>Example request body:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"https://w3id.org/security/v1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"https://www.w3.org/ns/activitystreams"</span><span class="p">,</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"Hashtag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"as:Hashtag"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sensitive"</span><span class="p">:</span><span class="w"> </span><span class="s2">"as:sensitive"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://schema.org/"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"pixelfed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://pixelfed.org/ns#"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"commentsEnabled"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pixelfed:commentsEnabled"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"schema:Boolean"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"capabilities"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pixelfed:capabilities"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"@container"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@set"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"announce"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pixelfed:canAnnounce"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"like"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pixelfed:canLike"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"reply"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"@id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pixelfed:canReply"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"@type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@id"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"toot"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://joinmastodon.org/ns#"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"Emoji"</span><span class="p">:</span><span class="w"> </span><span class="s2">"toot:Emoji"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"blurhash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"toot:blurhash"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://pixelfed.social/p/mczachurski/650595293594582993/activity"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Create"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"actor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://pixelfed.social/users/mczachurski"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"published"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-01-10T07:13:25+00:00"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"to"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"https://www.w3.org/ns/activitystreams#Public"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"cc"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"https://pixelfed.social/users/mczachurski/followers"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"https://gram.social/users/Alice"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"object"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://pixelfed.social/p/mczachurski/650595293594582993"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Note"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"summary"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Extra colours!"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"inReplyTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://gram.social/p/Alice/650350850687790456"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"published"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-01-10T07:13:25+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://pixelfed.social/p/mczachurski/650595293594582993"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"attributedTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://pixelfed.social/users/mczachurski"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"to"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"https://www.w3.org/ns/activitystreams#Public"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"cc"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"https://pixelfed.social/users/mczachurski/followers"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"https://gram.social/users/Alice"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"sensitive"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"attachment"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"tag"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mention"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://gram.social/users/Alice"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@Alice@gram.social"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"commentsEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"capabilities"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"announce"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.w3.org/ns/activitystreams#Public"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"like"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.w3.org/ns/activitystreams#Public"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"reply"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.w3.org/ns/activitystreams#Public"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><code>POST /api/v1/shared/inbox</code></p>
+
+<p>Endpoint for different kind of requests for Activity Pub protocol support.</p>
+<h2 id='get-actor'>Get actor</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/actors/johndoe"</span> <span class="se">\</span>
+  <span class="nt">-X</span> GET <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">URLRequest</span><span class="o">.</span><span class="n">shared</span>
+<span class="n">request</span><span class="o">.</span><span class="nf">post</span><span class="p">()</span>
+</code></pre></div>
+<blockquote>
+<p>Example response body (200 OK):</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"https://w3id.org/security/v1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"https://www.w3.org/ns/activitystreams"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"attachment"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MASTODON"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PropertyValue"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://mastodon.social/@johndoe"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GITHUB"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PropertyValue"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://github.com/johndoe"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"endpoints"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"sharedInbox"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/shared/inbox"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"followers"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/actors/johndoe/followers"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"following"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/actors/johndoe/following"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"icon"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"mediaType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpeg"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Image"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3.eu-central-1.amazonaws.com/instance/039ebf33d1664d5d849574d0e7191354.jpg"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/actors/johndoe"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"mediaType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpeg"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Image"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3.eu-central-1.amazonaws.com/instance/2ef4a0f69d0e410ba002df2212e2b63c.jpg"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"inbox"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/actors/johndoe/inbox"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"manuallyApprovesFollowers"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"outbox"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/actors/johndoe/outbox"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"preferredUsername"</span><span class="p">:</span><span class="w"> </span><span class="s2">"johndoe"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"publicKey"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/actors/johndoe#main-key"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"owner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/actors/johndoe"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"publicKeyPem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-----BEGIN PUBLIC KEY-----</span><span class="se">\n</span><span class="s2">M0Q....AB</span><span class="se">\n</span><span class="s2">-----END PUBLIC KEY-----"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#iOS/#dotNET developer, #Apple  fanboy, 📷 aspiring photographer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tag"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/hashtag/Apple"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Apple"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hashtag"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/hashtag/dotNET"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dotNET"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hashtag"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/hashtag/iOS"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"iOS"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hashtag"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Person"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/@johndoe"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><code>GET /api/v1/actors/:name</code></p>
+
+<p>Endpoint for download Activity Pub actor&#39;s data. One of the property is public key which should be used to validate requests done (and signed by private key) by the user in all Activity Pub protocol methods.</p>
+<h2 id='actor-inbox'>Actor inbox</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/actors/johndoe/inbox"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{ ... }'</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">URLRequest</span><span class="o">.</span><span class="n">shared</span>
+<span class="n">request</span><span class="o">.</span><span class="nf">post</span><span class="p">()</span>
+</code></pre></div>
+<p><code>POST /api/v1/actors/:name/inbox</code></p>
+<h2 id='actor-outbox'>Actor outbox</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/actors/johndoe/outbox"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{ ... }'</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">URLRequest</span><span class="o">.</span><span class="n">shared</span>
+<span class="n">request</span><span class="o">.</span><span class="nf">post</span><span class="p">()</span>
+</code></pre></div>
+<p><code>POST /api/v1/actors/:name/outbox</code></p>
+<h2 id='actor-following'>Actor following</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/actors/johndoe/following"</span> <span class="se">\</span>
+  <span class="nt">-X</span> GET <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/actors/johndoe/following?page=1"</span> <span class="se">\</span>
+  <span class="nt">-X</span> GET <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">URLRequest</span><span class="o">.</span><span class="n">shared</span>
+<span class="n">request</span><span class="o">.</span><span class="nf">post</span><span class="p">()</span>
+</code></pre></div>
+<blockquote>
+<p>Example response body without page (200 OK):</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.w3.org/ns/activitystreams"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://vernissage.photos/actors/mczachurski/following?page=1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://vernissage.photos/actors/mczachurski/following"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalItems"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OrderedCollection"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Example response body with page (200 OK):</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.w3.org/ns/activitystreams"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://vernissage.photos/actors/mczachurski/following?page=1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"orderedItems"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"https://pixelfed.social/users/AlanC"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"https://pixelfed.social/users/moyamoyashashin"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"https://vernissage.photos/actors/pczachurski"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"https://pixelfed.social/users/mczachurski"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"https://pixelfed.social/users/Devrin"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"https://vernissage.photos/actors/jlara"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"https://mastodon.social/users/mczachurski"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"https://pxlmo.com/users/jfick"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"partOf"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://vernissage.photos/actors/mczachurski/following"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalItems"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OrderedCollectionPage"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><code>GET /api/v1/actors/:name/following</code></p>
+
+<p>This is a list of everybody that the actor has followed.</p>
+<h2 id='actor-followers'>Actor followers</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/actors/johndoe/followers"</span> <span class="se">\</span>
+  <span class="nt">-X</span> GET <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/actors/johndoe/followers?page=1"</span> <span class="se">\</span>
+  <span class="nt">-X</span> GET <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">URLRequest</span><span class="o">.</span><span class="n">shared</span>
+<span class="n">request</span><span class="o">.</span><span class="nf">post</span><span class="p">()</span>
+</code></pre></div>
+<blockquote>
+<p>Example response body without page (200 OK):</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.w3.org/ns/activitystreams"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://vernissage.photos/actors/mczachurski/followers?page=1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://vernissage.photos/actors/mczachurski/followers"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalItems"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OrderedCollection"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Example response body with page (200 OK):</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.w3.org/ns/activitystreams"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://vernissage.photos/actors/mczachurski/followers?page=1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"orderedItems"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"https://vernissage.photos/actors/pczachurski"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"https://pixelfed.social/users/Devrin"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"https://vernissage.photos/actors/jlara"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"https://mastodon.social/users/mczachurski"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"https://pxlmo.com/users/amiko"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"https://pxlmo.com/users/jfick"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"partOf"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://vernissage.photos/actors/mczachurski/followers"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"totalItems"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OrderedCollectionPage"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><code>GET /api/v1/actors/:name/followers</code></p>
+
+<p>This is a list of everyone who has sent a Follow activity for the actor.</p>
+<h2 id='actor-status'>Actor status</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/actors/johndoe/statuses/7296951248933498881"</span> <span class="se">\</span>
+  <span class="nt">-X</span> GET <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">URLRequest</span><span class="o">.</span><span class="n">shared</span>
+<span class="n">request</span><span class="o">.</span><span class="nf">post</span><span class="p">()</span>
+</code></pre></div>
+<blockquote>
+<p>Example response body (200 OK):</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"@context"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"https://www.w3.org/ns/activitystreams"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"attachment"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"blurhash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UGMtaO?b_3%M00Rj_3Rj~qD%IUM{j[ofD%-;"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"exif"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"createDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-05-27T11:36:07+01:00"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"exposureTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1/50"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"fNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f/8"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"focalLenIn35mmFilm"</span><span class="p">:</span><span class="w"> </span><span class="s2">"85"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"lens"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Viltrox 85mm F1.8"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"make"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SONY"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ILCE-7M3"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"photographicSensitivity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">2731</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"countryCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PL"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"countryName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Poland"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"geonameId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3081368"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"51,1"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17,03333"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wrocław"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"mediaType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpeg"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feet visible from underneath through white foggy glass."</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Image"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://s3.eu-central-1.amazonaws.com/vernissage/f154e5d151e441b18d61389f87cc877c.jpg"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">4096</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"attributedTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://vernissage.photos/actors/mczachurski"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cc"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"https://vernissage.photos/actors/mczachurski/followers"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Feet over the head &lt;a href=</span><span class="se">\"</span><span class="s2">https://vernissage.photos/tags/blackandwhite</span><span class="se">\"</span><span class="s2">&gt;#blackandwhite&lt;/a&gt; &lt;a href=</span><span class="se">\"</span><span class="s2">https://vernissage.photos/tags/streetphotography</span><span class="se">\"</span><span class="s2">&gt;#streetphotography&lt;/a&gt;&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://vernissage.photos/actors/mczachurski/statuses/7296951248933498881"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"published"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-11-02T19:39:56.303Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sensitive"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"tag"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://vernissage.photos/hashtag/blackandwhite"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#blackandwhite"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hashtag"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://vernissage.photos/hashtag/streetphotography"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#streetphotography"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hashtag"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"to"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"https://www.w3.org/ns/activitystreams#Public"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Note"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://vernissage.photos/@mczachurski/7296951248933498881"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><code>GET /api/v1/actors/:name/statuses/:id</code></p>
+<h1 id='registration'>Registration</h1>
+<p>Endpoints used for registaring new user into the system.</p>
+<h2 id='new-user'>New user</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/register"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{ ... }'</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">URLRequest</span><span class="o">.</span><span class="n">shared</span>
+<span class="n">request</span><span class="o">.</span><span class="nf">post</span><span class="p">()</span>
+</code></pre></div>
+<blockquote>
+<p>Example request body:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"johndoe"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"johndoe@email.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P@ssword1!"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"redirectBaseUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"agreement"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"bio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"I'm a photographer..."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"securityToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"435nkerguh8734bwbrg"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en_US"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"I would like to share with you my photos..."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"inviteToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"34egdfert9fyg7d8fbt9sd"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Example response body (200 OK):</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7243149752689283073"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"johndoe"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"account"</span><span class="p">:</span><span class="w"> </span><span class="s2">"johndoe@example.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"johndoe@email.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"bio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"I'm a photographer..."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"avatarUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com/storage/454kwffvsr453sdfsd2345wevsdf.jpg"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Example response body (field validation):</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"validationError"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Validation errors occurs."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"failures"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"failure"</span><span class="p">:</span><span class="w"> </span><span class="s2">"is not a valid email address"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"redirectBaseUrl"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"failure"</span><span class="p">:</span><span class="w"> </span><span class="s2">"is an invalid URL"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Example response body (business logic validation):</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"userNameIsAlreadyTaken"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User with provided user name already exists in the system."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><code>POST /api/v1/register</code></p>
+
+<p>Create a new user account in the system. After registration, the user can use the system, but until he confirms his e-mail address,
+access is limited. For example, the user cannot add new statuses. It is also recommended to configure <code>reCaptcha</code>,
+which will prevent bots from creating accounts.</p>
+
+<p>During account creation process server will send to the user inbox email with information how to confirm his email address.
+In the email there will be link with address to the client application (from <code>redirectBaseUrl</code>). Client application should
+serve the page will can retrieve two parameters:</p>
+
+<ul>
+<li><code>token</code> - string, GUID</li>
+<li><code>userId</code> - new user identifier</li>
+</ul>
+
+<p>Client application have to read that parameters and use endpoint <code>POST /api/v1/account/email/confirm</code> to confirm the email.</p>
+<h3 id='request-properties'>Request properties</h3>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userName</td>
+<td>string(1...50)</td>
+<td>User name of the new user. <br /> <strong>required</strong></td>
+</tr>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>Email address of the new user. <br /> <strong>format:</strong> email <br /> <strong>required</strong></td>
+</tr>
+<tr>
+<td>password</td>
+<td>string(8...32)</td>
+<td>Password for the new account. At least one lowercase letter, one uppercase letter, number or symbol. <br /> <strong>format:</strong> password <br /> <strong>required</strong></td>
+</tr>
+<tr>
+<td>redirectBaseUrl</td>
+<td>string</td>
+<td>Base url to web application. It&#39;s used to redirect from email about email confirmation to correct web application page. <br /> <strong>format:</strong> url <br /> <strong>required</strong></td>
+</tr>
+<tr>
+<td>agreement</td>
+<td>bool</td>
+<td>Information if user accepted the server rules. Only request with <code>true</code> as a value can be procesed. <br /> <strong>required</strong></td>
+</tr>
+<tr>
+<td>name</td>
+<td>string(...100)</td>
+<td>Full name of the user. <br /> <strong>optional</strong></td>
+</tr>
+<tr>
+<td>bio</td>
+<td>string(...500)</td>
+<td>Short information about the user. <br /> <strong>optional</strong></td>
+</tr>
+<tr>
+<td>securityToken</td>
+<td>string(0...)</td>
+<td>Token generated by <code>reCaptcha</code> <br /> <strong>required</strong> (can be empty)</td>
+</tr>
+<tr>
+<td>locale</td>
+<td>string(5)</td>
+<td>Locale with format like: <code>en_US</code>, <code>en_GB</code>, <code>pl_PL</code> etc. This will be used to prepare email for confirmation email message. <br /> <strong>optional</strong></td>
+</tr>
+<tr>
+<td>reason</td>
+<td>string(...500)</td>
+<td>When registartion by moderator approval is enabled (and open registration is disabled) user have to write reason why account for him should be created <br /> <strong>optional</strong></td>
+</tr>
+<tr>
+<td>inviteToken</td>
+<td>string</td>
+<td>When registration by invitation is enabled (and open registration is disabled) the invitation token have to be specified <br /> <strong>optional</strong></td>
+</tr>
+</tbody></table>
+<h3 id='response-properties'>Response properties</h3>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string(20)</td>
+<td>New user identifier.</td>
+</tr>
+<tr>
+<td>userName</td>
+<td>string(1...50)</td>
+<td>User name created by the user.</td>
+</tr>
+<tr>
+<td>account</td>
+<td>string</td>
+<td>Account create by concatenate <code>userName</code> and the <code>domain</code> of the server (used in ActivityPub).</td>
+</tr>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>User email.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string(...100)</td>
+<td>User full name.</td>
+</tr>
+<tr>
+<td>bio</td>
+<td>string(...500)</td>
+<td>Short information about the user.</td>
+</tr>
+<tr>
+<td>avatarUrl</td>
+<td>string</td>
+<td>Url to the new user avatar. Avatar is downloaded from <code>Gravatar</code> service based on user email. When user doesn&#39;t have avatar in that service default avatar is used.</td>
+</tr>
+</tbody></table>
+<h3 id='errors'>Errors</h3>
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Code</th>
+<th>Reason</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>validationError</td>
+<td>Validation errors occurs.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>securityTokenIsMandatory</td>
+<td>Security token is mandatory (it should be provided from Google reCaptcha).</td>
+</tr>
+<tr>
+<td>400</td>
+<td>securityTokenIsInvalid</td>
+<td>Security token is invalid (Google reCaptcha API returned that information).</td>
+</tr>
+<tr>
+<td>400</td>
+<td>userNameIsAlreadyTaken</td>
+<td>User with provided user name already exists in the system.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>emailIsAlreadyConnected</td>
+<td>Email is already connected with other account.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>missingEmail</td>
+<td>Email has not been specified but it&#39;s mandatory.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>missingEmailConfirmationGuid</td>
+<td>Email confirmation guid has not been generated.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>registrationIsDisabled</td>
+<td>Registration is disabled.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>userHaveToAcceptAgreeent</td>
+<td>User have to accept agreement.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>reasonIsMandatory</td>
+<td>Reason is mandatory when only registration by approval is enabled.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>invitationTokenIsInvalid</td>
+<td>Invitation token is invalid.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>invitationTokenHasBeenUsed</td>
+<td>Invitation token has been used.</td>
+</tr>
+<tr>
+<td>500</td>
+<td>userIdNotExists</td>
+<td>User Id not exists. Probably saving of the user entity failed.</td>
+</tr>
+</tbody></table>
+<h2 id='username'>Username</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/register/username/@username"</span> <span class="se">\</span>
+  <span class="nt">-X</span> GET <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">URLRequest</span><span class="o">.</span><span class="n">shared</span>
+<span class="n">request</span><span class="o">.</span><span class="nf">post</span><span class="p">()</span>
+</code></pre></div>
+<blockquote>
+<p>Example response body (200 OK):</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><code>GET /api/v1/register/username/@username</code></p>
+
+<p>Information about user name availability. Endpoint can be used on registration screen to show very fast information to the user.</p>
+<h2 id='email'>Email</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/register/email/johndoe@example.com"</span> <span class="se">\</span>
+  <span class="nt">-X</span> GET <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">URLRequest</span><span class="o">.</span><span class="n">shared</span>
+<span class="n">request</span><span class="o">.</span><span class="nf">post</span><span class="p">()</span>
+</code></pre></div>
+<blockquote>
+<p>Example response body (200 OK):</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><code>GET /api/v1/register/email/johndoe@example.com</code></p>
+
+<p>Information about email availability. Endpoint can be used on registration screen to show very fast information to the user.</p>
+<h1 id='account'>Account</h1>
+<p>Endpoints used for tasks connected with user account.</p>
+<h2 id='login'>Login</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/account/login"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{ ... }'</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">URLRequest</span><span class="o">.</span><span class="n">shared</span>
+<span class="n">request</span><span class="o">.</span><span class="nf">post</span><span class="p">()</span>
+</code></pre></div>
+<blockquote>
+<p>Example request body:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"userNameOrEmail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"johndoe"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P@ssword1!"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Example response body:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"accessToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCJ9.eyJyb2xlcyI6W10sInVzZXJOYW1lIjoibmlja2Z..."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"refreshToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8v4JbrTeboHsD5T24WdhkkHgVx3UQ2F2FQaZd3sT0"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><code>POST /api/v1/account/login</code></p>
+
+<p>Sign-in user via login (user nane or email) and password.</p>
+<h3 id='request-properties'>Request properties</h3>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userNameOrEmail</td>
+<td>string(1...50)</td>
+<td>User name or email.</td>
+</tr>
+<tr>
+<td>password</td>
+<td>string(8...32)</td>
+<td>Password.</td>
+</tr>
+</tbody></table>
+<h3 id='response-properties'>Response properties</h3>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>accessToken</td>
+<td>string</td>
+<td>JWT access token.</td>
+</tr>
+<tr>
+<td>refreshToken</td>
+<td>string</td>
+<td>Token which can be used to refresh <code>accessToken</code>.</td>
+</tr>
+</tbody></table>
+<h3 id='errors'>Errors</h3>
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Code</th>
+<th>Reason</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>validationError</td>
+<td>Validation errors occurs.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>invalidLoginCredentials</td>
+<td>Given user name or password are invalid.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>userAccountIsBlocked</td>
+<td>User account is blocked. User cannot login to the system right now.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>userAccountIsNotApproved</td>
+<td>User account is not aprroved yet. User cannot login to the system right now.</td>
+</tr>
+<tr>
+<td>500</td>
+<td>saltCorrupted</td>
+<td>Password has been corrupted. Please contact with portal administrator.</td>
+</tr>
+</tbody></table>
+<h2 id='confirm-email'>Confirm email</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/account/email/confirm"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{ ... }'</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">URLRequest</span><span class="o">.</span><span class="n">shared</span>
+<span class="n">request</span><span class="o">.</span><span class="nf">post</span><span class="p">()</span>
+</code></pre></div>
+<blockquote>
+<p>Example request body:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7243149752689283073"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"confirmationGuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fe4547e0-513d-40fb-8a1f-35c9e4beb8e9"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><code>POST /api/v1/account/email/confirm</code></p>
+
+<p>Endpoint should be used for email verification. During creating account special email is sending.
+In that email there is a link to your website (with id and confirmationGuid as query parameters).
+You have to create page which will read that parameters and it should send request to following endpoint.</p>
+<h3 id='request-properties-2'>Request properties</h3>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string(20)</td>
+<td>User id.</td>
+</tr>
+<tr>
+<td>confirmationGuid</td>
+<td>string(36)</td>
+<td>UUID which will be used to confirm email.</td>
+</tr>
+</tbody></table>
+<h3 id='errors-2'>Errors</h3>
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Code</th>
+<th>Reason</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>validationError</td>
+<td>Validation errors occurs.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>invalidIdOrToken</td>
+<td>Invalid user Id or token. Email cannot be approved.</td>
+</tr>
+</tbody></table>
+<h2 id='resend-email'>Resend email</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/account/email/resend"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer [ACCESS_TOKEN]"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{ ... }'</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">URLRequest</span><span class="o">.</span><span class="n">shared</span>
+<span class="n">request</span><span class="o">.</span><span class="nf">post</span><span class="p">()</span>
+</code></pre></div>
+<blockquote>
+<p>Example request body:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"redirectBaseUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><code>POST /api/v1/account/email/resend</code></p>
+
+<p>Endpoint should be used for resending email for email verification. User have to be signed in into the system and <code>Bearer</code>
+token have to be attached to the request.</p>
+<h3 id='request-properties-3'>Request properties</h3>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>redirectBaseUrl</td>
+<td>string</td>
+<td>Base url to web application. It&#39;s used to redirect from email about email confirmation to correct web application page. <br /> <strong>format:</strong> url <br /> <strong>required</strong></td>
+</tr>
+</tbody></table>
+<h3 id='errors-3'>Errors</h3>
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Code</th>
+<th>Reason</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>validationError</td>
+<td>Validation errors occurs.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>emailIsAlreadyConfirmed</td>
+<td>Email is already confirmed.</td>
+</tr>
+</tbody></table>
+<h2 id='change-password'>Change password</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/account/password"</span> <span class="se">\</span>
+  <span class="nt">-X</span> PUT <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer [ACCESS_TOKEN]"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{ ... }'</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">URLRequest</span><span class="o">.</span><span class="n">shared</span>
+<span class="n">request</span><span class="o">.</span><span class="nf">post</span><span class="p">()</span>
+</code></pre></div>
+<blockquote>
+<p>Example request body:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"currentPassword"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P@ssword1!"</span><span class="w">
+    </span><span class="nl">"newPassword"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NewPassword1!"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><code>PUT /api/v1/account/password</code></p>
+
+<p>Changing user password. In the request old and new passwords have to be specified and user have to be signed in into the system.</p>
+<h3 id='request-properties-4'>Request properties</h3>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>currentPassword</td>
+<td>string(8...32)</td>
+<td>Old password for the account. <br /> <strong>format:</strong> password <br /> <strong>required</strong></td>
+</tr>
+<tr>
+<td>newPassword</td>
+<td>string(8...32)</td>
+<td>New password for the account. At least one lowercase letter, one uppercase letter, number or symbol. <br /> <strong>format:</strong> password <br /> <strong>required</strong></td>
+</tr>
+</tbody></table>
+<h3 id='errors-4'>Errors</h3>
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Code</th>
+<th>Reason</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>validationError</td>
+<td>Validation errors occurs.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>invalidOldPassword</td>
+<td>Given old password is invalid.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>userAccountIsBlocked</td>
+<td>User account is blocked. User cannot login to the system right now.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>userNotFound</td>
+<td>Signed user was not found in the database.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>emailNotConfirmed</td>
+<td>User email is not confirmed. User have to confirm his email first.</td>
+</tr>
+<tr>
+<td>500</td>
+<td>saltCorrupted</td>
+<td>Password has been corrupted. Please contact with portal administrator.</td>
+</tr>
+</tbody></table>
+<h2 id='forgot-password'>Forgot password</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/account/forgot/token"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{ ... }'</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">URLRequest</span><span class="o">.</span><span class="n">shared</span>
+<span class="n">request</span><span class="o">.</span><span class="nf">post</span><span class="p">()</span>
+</code></pre></div>
+<blockquote>
+<p>Example request body:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"johndoe@example.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"redirectBaseUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://example.com"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><code>POST /api/v1/account/forgot/token</code></p>
+
+<p>Sending email with token for authenticate changing password request. Url from email will redirect to client application (with token in query string).
+Client application have to ask for new password and send new password and token from query string.</p>
+<h3 id='request-properties-5'>Request properties</h3>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>Email which has been used during registration. <br /> <strong>format:</strong> email <br /> <strong>required</strong></td>
+</tr>
+<tr>
+<td>redirectBaseUrl</td>
+<td>string</td>
+<td>Base url to web application. It&#39;s used to redirect from email about email to correct web application page. <br /> <strong>format:</strong> url <br /> <strong>required</strong></td>
+</tr>
+</tbody></table>
+<h3 id='errors-5'>Errors</h3>
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Code</th>
+<th>Reason</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>validationError</td>
+<td>Validation errors occurs.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>userAccountIsBlocked</td>
+<td>User account is blocked. User cannot login to the system right now.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>userNotFound</td>
+<td>Signed user was not found in the database.</td>
+</tr>
+</tbody></table>
+<h2 id='reset-password'>Reset password</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/account/forgot/confirm"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{ ... }'</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">URLRequest</span><span class="o">.</span><span class="n">shared</span>
+<span class="n">request</span><span class="o">.</span><span class="nf">post</span><span class="p">()</span>
+</code></pre></div>
+<blockquote>
+<p>Example request body:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"forgotPasswordGuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f0a5d44f-9f91-4514-b045-71cd096a84f2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"newP@ssword1!"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><code>POST /api/v1/account/forgot/confirm</code></p>
+
+<p>Change password based on token from email.</p>
+<h3 id='request-properties-6'>Request properties</h3>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>forgotPasswordGuid</td>
+<td>string(36)</td>
+<td>UUID which have been generated in previous request. <br /> <strong>required</strong></td>
+</tr>
+<tr>
+<td>password</td>
+<td>string(8...32)</td>
+<td>New password for the account. At least one lowercase letter, one uppercase letter, number or symbol. <br /> <strong>format:</strong> password <br /> <strong>required</strong></td>
+</tr>
+</tbody></table>
+<h3 id='errors-6'>Errors</h3>
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Code</th>
+<th>Reason</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>validationError</td>
+<td>Validation errors occurs.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>emailIsEmpty</td>
+<td>User email is empty. Cannot send email with token.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>userAccountIsBlocked</td>
+<td>User account is blocked. You cannot change password right now.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>tokenExpired</td>
+<td>Token which allows to change password expired. User have to repeat forgot password process.</td>
+</tr>
+<tr>
+<td>500</td>
+<td>tokenNotGenerated</td>
+<td>Forgot password token wasn&#39;t generated. It&#39;s really strange.</td>
+</tr>
+<tr>
+<td>500</td>
+<td>passwordNotHashed</td>
+<td>Password was not hashed successfully.</td>
+</tr>
+<tr>
+<td>500</td>
+<td>saltCorrupted</td>
+<td>Password has been corrupted. Please contact with portal administrator.</td>
+</tr>
+</tbody></table>
+<h2 id='refresh-access-token'>Refresh access token</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/account/refresh-token"</span> <span class="se">\</span>
+  <span class="nt">-X</span> POST <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{ ... }'</span>
+</code></pre></div><div class="highlight"><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">URLRequest</span><span class="o">.</span><span class="n">shared</span>
+<span class="n">request</span><span class="o">.</span><span class="nf">post</span><span class="p">()</span>
+</code></pre></div>
+<blockquote>
+<p>Example request body:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"refreshToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8v4JbrTeboHsD5T24WdhkkHgVx3UQ2F2FQaZd3sT0"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Example response body:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"accessToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCJ9.eyJyb2xlcyI6W10sInVzZXJOYW1lIjoibmlja2Z..."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"refreshToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8v4JbrTeboHsD5T24WdhkkHgVx3UQ2F2FQaZd3sT0"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><code>POST /api/v1/account/refresh-token</code></p>
+
+<p>Endpoint will regenerate new <code>access_token</code> based on <code>refresh_token</code> which has been generated during the login process.</p>
+<h3 id='request-properties-7'>Request properties</h3>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>refreshToken</td>
+<td>string</td>
+<td>Refresh token set up during the login process.</td>
+</tr>
+</tbody></table>
+<h3 id='response-properties-2'>Response properties</h3>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>accessToken</td>
+<td>string</td>
+<td>JWT access token.</td>
+</tr>
+<tr>
+<td>refreshToken</td>
+<td>string</td>
+<td>Token which can be used to refresh <code>accessToken</code>.</td>
+</tr>
+</tbody></table>
+<h3 id='errors-7'>Errors</h3>
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Code</th>
+<th>Reason</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>validationError</td>
+<td>Validation errors occurs.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>refreshTokenRevoked</td>
+<td>Refresh token was revoked.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>refreshTokenExpired</td>
+<td>Refresh token was expired.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>userAccountIsBlocked</td>
+<td>User account is blocked. You cannot change password right now.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>refreshTokenNotExists</td>
+<td>Refresh token not exists or it&#39;s expired.</td>
+</tr>
+</tbody></table>
+<h2 id='revoke-refresh-tokens'>Revoke refresh tokens</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://example.com/api/v1/account/refresh-token/@johndoe"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer [ACCESS_TOKEN]"</span> <span class="se">\</span>
+  <span class="nt">-X</span> DELETE
+</code></pre></div><div class="highlight"><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">URLRequest</span><span class="o">.</span><span class="n">shared</span>
+<span class="n">request</span><span class="o">.</span><span class="nf">post</span><span class="p">()</span>
+</code></pre></div>
+<p><code>DELETE /api/v1/account/refresh-token/@johndoe</code></p>
+
+<p>Endpoint will revoke all refresh tokens created in context of specified in Url user. Access to that endpoint have administrator
+and user mentioned in the Url (when user and <code>access_token</code> match).</p>
+<h3 id='errors-8'>Errors</h3>
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Code</th>
+<th>Reason</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>validationError</td>
+<td>Validation errors occurs.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>userNotFound</td>
+<td>User not exists in the database.</td>
+</tr>
+</tbody></table>
+<h1 id='attachments'>Attachments</h1>
+<p>Controls basic operations for photos.</p>
+<h1 id='avatars'>Avatars</h1>
+<p>Controls basic operations for avatar image for user object.</p>
+<h1 id='categories'>Categories</h1>
+<p>Exposing list of categories.</p>
+<h1 id='countries'>Countries</h1>
+<p>Exposing list of countries.</p>
+<h1 id='follow-requests'>Follow requests</h1>
+<p>Controller for managing user&#39;s follow requests.</p>
+<h1 id='headers'>Headers</h1>
+<p>Controls basic operations for headers image for user object.</p>
+<h1 id='instance'>Instance</h1>
+<p>Controller which expose information about specific instance configuration.</p>
+<h1 id='invitations'>Invitations</h1>
+<p>Controller for managing invitations.</p>
+<h1 id='locations'>Locations</h1>
+<p>Exposing list of locations.</p>
+<h1 id='notifications'>Notifications</h1>
+<p>Controller for managing list of user&#39;s notifications.</p>
+<h1 id='relationships'>Relationships</h1>
+<p>Exposing information about user&#39;s relatioinships.</p>
+<h1 id='reports'>Reports</h1>
+<p>Controller for managing user&#39;s reports.</p>
+<h1 id='roles'>Roles</h1>
+<p>Controller for managing system roles.</p>
+<h1 id='search'>Search</h1>
+<p>Controller for search feature.</p>
+<h1 id='settings'>Settings</h1>
+<p>Controller for managing system settings.</p>
+<h1 id='statuses'>Statuses</h1>
+<p>Operations on statuses.</p>
+<h1 id='timelines'>Timelines</h1>
+<p>Returns user&#39;s timelines.</p>
+<h1 id='trending'>Trending</h1>
+<p>Returns basic tranding timelines.</p>
+<h1 id='users'>Users</h1>
+<p>Controls basic operations for User object.</p>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+                <a href="#" data-language-name="swift">swift</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
